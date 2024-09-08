@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="title: 面试题date: 2024-09-08 15:38:00tags: [Linux]cover: https:&#x2F;&#x2F;guboyan666.github.io&#x2F;2024&#x2F;09&#x2F;07&#x2F;管道与重定向&#x2F;6.png 管道与重定向 1只有在开水里，茶叶才能展开生命浓郁的香气.  千 锋 云 计 算 学 院一、重定向1标准输入、标准正确输出、标准错误输出  ​           123进程在运行的过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2024/03/11/%E7%AE%A1%E9%81%93%E4%B8%8E%E9%87%8D%E5%AE%9A%E5%90%91/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="title: 面试题date: 2024-09-08 15:38:00tags: [Linux]cover: https:&#x2F;&#x2F;guboyan666.github.io&#x2F;2024&#x2F;09&#x2F;07&#x2F;管道与重定向&#x2F;6.png 管道与重定向 1只有在开水里，茶叶才能展开生命浓郁的香气.  千 锋 云 计 算 学 院一、重定向1标准输入、标准正确输出、标准错误输出  ​           123进程在运行的过">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/assets/1.png">
+<meta property="og:image" content="http://example.com/assets/image-20191107205931650.png">
+<meta property="og:image" content="http://example.com/assets/image-20191107210044263.png">
+<meta property="og:image" content="http://example.com/assets/image-20200725153028330.png">
+<meta property="article:published_time" content="2024-03-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-09-08T07:29:44.693Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/assets/1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-管道与重定向" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/11/%E7%AE%A1%E9%81%93%E4%B8%8E%E9%87%8D%E5%AE%9A%E5%90%91/" class="article-date">
+  <time class="dt-published" datetime="2024-03-10T16:00:00.000Z" itemprop="datePublished">2024-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>title: 面试题<br>date: 2024-09-08 15:38:00<br>tags: [Linux]<br>cover: <a target="_blank" rel="noopener" href="https://guboyan666.github.io/2024/09/07/%E7%AE%A1%E9%81%93%E4%B8%8E%E9%87%8D%E5%AE%9A%E5%90%91/6.png">https://guboyan666.github.io/2024/09/07/管道与重定向/6.png</a></p>
+<p>管道与重定向</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">只有在开水里，茶叶才能展开生命浓郁的香气.</span><br></pre></td></tr></table></figure>
+
+<h1 id="千-锋-云-计-算-学-院"><a href="#千-锋-云-计-算-学-院" class="headerlink" title="千 锋 云 计 算 学 院"></a>千 锋 云 计 算 学 院</h1><h3 id="一、重定向"><a href="#一、重定向" class="headerlink" title="一、重定向"></a>一、重定向</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">标准输入、标准正确输出、标准错误输出</span><br></pre></td></tr></table></figure>
+
+<p>​          <img src="/assets/1.png" alt="assets/1.png"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">进程在运行的过程中根据需要会打开多个文件，每打开一个文件会有一个数字标识。这个标识叫文件描述符。</span><br><span class="line">进程使用文件描述符来管理打开的文件（FD----file descriptors）.</span><br><span class="line">文件描述符：每打开一个程序都会有文件描述</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">0，标准输入(键盘)</span><br><span class="line">1,标准输出</span><br><span class="line">2,标准错误，</span><br><span class="line">3+,进程在执行过程中打开的其他文件。  </span><br><span class="line">&amp;:表示正确错误混合输出</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、输出重定向-覆盖，追加"><a href="#二、输出重定向-覆盖，追加" class="headerlink" title="二、输出重定向 (覆盖，追加)"></a><strong>二、输出重定向 (覆盖，追加)</strong></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">  ----覆盖</span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;  ----追加</span></span><br><span class="line">正确输出： 1&gt; 1&gt;&gt; 等价于 &gt; &gt;&gt;</span><br><span class="line">错误输出： 2&gt; 2&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.1. 案例1：输出重定向（覆盖）</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@qfedu.com ~]# date 1&gt; date.txt  #正确输出--覆盖</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">注意：如果 &gt; 前面什么都不加默认为1，标准正确输出。</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/assets/image-20191107205931650.png" alt="image-20191107205931650"></p>
+<p><strong>2.2.案例2：输出重定向（追加）</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@qfedu.com ~]# date &gt;&gt; date.txt #正确输出--追加</span><br></pre></td></tr></table></figure>
+
+<p><img src="/assets/image-20191107210044263.png" alt="image-20191107210044263"></p>
+<p><strong>2.3. 案例3：错误输出重定向</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@qfedu.com ~]# ls /home/  /aaaaaaaaa &gt;list.txt</span><br><span class="line">ls: cannot access /aaaaaaaaa: No such file or directory</span><br><span class="line">[root@qfedu.com ~]# ls /home/  /aaaaaaaaa &gt;list.txt 2&gt;error.txt #重定向到不同的位置</span><br><span class="line">[root@qfedu.com ~]# cat error.txt </span><br><span class="line">ls: cannot access /aaaaaaaaa: No such file or directory</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>2.4.正确和错误都输入到相同位置</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@qfedu.com ~]# ls /home/  /aaaaaaaaa &amp;&gt;list.txt  #混合输出到相同文件</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.5.重定向到空设备&#x2F;dev&#x2F;null</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@qfedu.com ~]# ls /home/  /aaaaaaaaa &gt;list.txt 2&gt;/dev/null #空设备，将错误的输出丢掉</span><br><span class="line">[root@qfedu.com ~]# ls /home/  /aaaaaaaaa &amp;&gt;/dev/null #空设备，将正确与错误的输出丢掉</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo会将输入的内容送往标准输出（打印）</span><br><span class="line">echo 内容 &gt;&gt; 文件名或脚本里面</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、输入重定向"><a href="#三、输入重定向" class="headerlink" title="三、输入重定向 &lt;"></a>三、输入重定向 &lt;</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">标准输入： &lt;   等价 0&lt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例子</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">默认情况下，cat 命令会接受标准输入设备（键盘）的输入，并显示到控制台，但如果用文件代替键盘作为输入设备，那么该命令会以指定的文件作为输入设备，并将文件中的内容读取并显示到控制台。</span><br><span class="line"></span><br><span class="line">[root@qfedu.com ~]# cat /etc/passwd</span><br><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">bin:x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">...</span><br><span class="line">[root@qfedu.com ~]# cat &lt; /etc/passwd  #输入重定向</span><br><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">bin:x:1:1:bin:/bin:/sbin/nologin</span><br><span class="line">...</span><br><span class="line">虽然执行结果相同，但第一行代表是以键盘作为输入设备，而第二行代码是以 /etc/passwd 文件作为输入设备</span><br><span class="line">注意：将/etc/passwd作为cat的输入，读出/etc/passwd的内容</span><br></pre></td></tr></table></figure>
+
+<h6 id="通过输入重定向创建文件"><a href="#通过输入重定向创建文件" class="headerlink" title="通过输入重定向创建文件"></a>通过输入重定向创建文件</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">（cat &gt; file &lt;&lt; EOF ）是用来创建文件或者在脚本中使用，并向文件中输入信息输入的任何东西会被写入文件中，EOF命令结束。</span><br><span class="line"></span><br><span class="line">语法：cat &gt;&gt; file5 &lt;&lt;EOF  #可以写到脚本或者文件里面</span><br><span class="line">EOF:开始和结束的标记。</span><br><span class="line">成对使用</span><br><span class="line">结尾的另一个必须定格写。</span><br></pre></td></tr></table></figure>
+
+<p><strong>实战案例一：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@qfedu.com ~]# cat &gt;file4 &lt;&lt;EOF</span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">111</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">222</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">333</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">444</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">EOF</span></span><br><span class="line">[root@qfedu.com ~]# cat file4 </span><br><span class="line">111</span><br><span class="line">222</span><br><span class="line">333</span><br><span class="line">444</span><br></pre></td></tr></table></figure>
+
+<p><strong>实战案例二</strong></p>
+<p>利用重定向建立多行的文件  脚本创建多行文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@qfedu.com ~]# vim create_file.sh</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">cat &gt;file200.txt &lt;&lt;EOF</span><br><span class="line">111</span><br><span class="line">222</span><br><span class="line">333</span><br><span class="line">yyy</span><br><span class="line">ccc</span><br><span class="line">EOF</span><br><span class="line">[root@qfedu.com ~]# chmod +x create_file.sh </span><br><span class="line">[root@qfedu.com ~]# ./create_file.sh </span><br><span class="line">[root@qfedu.com ~]# cat file200.txt </span><br><span class="line">111</span><br><span class="line">222</span><br><span class="line">333</span><br><span class="line">yyy</span><br><span class="line">ccc</span><br></pre></td></tr></table></figure>
+
+<h3 id="四、管道"><a href="#四、管道" class="headerlink" title="四、管道 |"></a>四、管道 |</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用法：command1 | command2 |command3 |...</span><br></pre></td></tr></table></figure>
+
+<p><img src="/assets/image-20200725153028330.png" alt="image-20200725153028330"></p>
+<p><strong>实战案例一</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@qfedu.com ~]# ls /etc  |grep &#x27;sys&#x27;  #查询目录内符合要求的文件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>实战案例二</strong></p>
+<p>将&#x2F;etc&#x2F;passwd中的用户按UID大小排序</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@qfedu.com ~]# sort -t&quot;:&quot; -k3 -n /etc/passwd  #以: 分隔，将第三列按字数升序</span><br><span class="line">[root@qfedu.com ~]# sort -t&quot;:&quot; -k3 -n /etc/passwd -r #以: 分隔，将第三列按字数降序</span><br><span class="line">[root@qfedu.com ~]# sort -t&quot;:&quot; -k3 -n /etc/passwd |head #以: 分隔，将第三列按字数升序看前十行</span><br><span class="line">[root@qfedu.com ~]# sort -t&quot;:&quot; -k3 -n /etc/passwd |tail #以: 分隔，将第三列按字数升序看后十行</span><br><span class="line">参数详解：</span><br><span class="line">sort 排序，默认升序</span><br><span class="line">-t 指定分隔符</span><br><span class="line">-k 指定列</span><br><span class="line">-n 按数值</span><br><span class="line">-r 降序</span><br><span class="line">head 默认输出前十行</span><br><span class="line">tail 默认输出后十行</span><br></pre></td></tr></table></figure>
+
+<h3 id="五、参数传递：xargs"><a href="#五、参数传递：xargs" class="headerlink" title="五、参数传递：xargs"></a>五、参数传递：xargs</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对：ls cp rm  管道不能执行。所以通过xargs。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">语法:</span><br><span class="line">cat a.txt | xargs  -i cp &#123;&#125; /目录  </span><br><span class="line">&#123;&#125;:前面传过来的内容</span><br><span class="line">-i ：为了让大括号生效</span><br><span class="line">目录时  -r</span><br><span class="line">解释：前面传过来的东西交给大括号</span><br><span class="line"></span><br><span class="line">cat file.txt |xargs ls -l          </span><br><span class="line">前面是目录或者目录的路径。  ls - l  后面可以不加大括号，直接执行。</span><br></pre></td></tr></table></figure>
+
+<p><strong>实战案例一</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@qfedu.com ~]# touch /home/file&#123;1..5&#125;</span><br><span class="line">[root@qfedu.com ~]# vim files.txt</span><br><span class="line">/home/file1</span><br><span class="line">/home/file2</span><br><span class="line">/home/file3 </span><br><span class="line">/home/file4</span><br><span class="line">/home/file5</span><br><span class="line">[root@qfedu.com ~]# cat files.txt |ls -l #不加xargs传参，看输出结果</span><br><span class="line">[root@qfedu.com ~]# cat files.txt |rm -rvf  #不加xargs传参，看输出结果</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@qfedu.com ~]# cat files.txt |xargs ls -l</span><br><span class="line">-rw-r--rwx. 1 root root 12 Nov  7 21:57 /home/file1</span><br><span class="line">-rw-r--r--. 1 root root  0 Nov  7 21:57 /home/file2</span><br><span class="line">-rw-r--r--. 1 root root  0 Nov  7 21:57 /home/file3</span><br><span class="line">-rw-r--r--. 1 root root  0 Nov  7 21:57 /home/file4</span><br><span class="line">-rw-r--r--. 1 root root  0 Nov  7 21:57 /home/file5</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@qfedu.com ~]# cat files.txt |xargs rm -rvf</span><br><span class="line">removed ‘/home/file1’</span><br><span class="line">removed ‘/home/file2’</span><br><span class="line">removed ‘/home/file3’</span><br><span class="line">removed ‘/home/file4’</span><br><span class="line">removed ‘/home/file5’</span><br></pre></td></tr></table></figure>
+
+<p><strong>实战案例二</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@qfedu.com ~]# touch /home/file&#123;1..5&#125;</span><br><span class="line">[root@qfedu.com ~]# # cat files.txt | xargs -i cp -rvf &#123;&#125; /tmp/</span><br><span class="line">‘/home/file1’ -&gt; ‘/tmp/file1’</span><br><span class="line">‘/home/file2’ -&gt; ‘/tmp/file2’</span><br><span class="line">‘/home/file3’ -&gt; ‘/tmp/file3’</span><br><span class="line">‘/home/file4’ -&gt; ‘/tmp/file4’</span><br><span class="line">‘/home/file5’ -&gt; ‘/tmp/file5’</span><br></pre></td></tr></table></figure>
+
+<p><strong>作业</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1.cat /2.txt 将它的结果混合输出到/opt/file.txt</span><br><span class="line">2.怎么判断一个账户是否存在？？</span><br><span class="line">3.将22覆盖到a.txt文件中</span><br><span class="line">4.&gt;与&gt;&gt;区别是什么</span><br><span class="line">5.将cat /home/b.txt中将正确的输出重定向到a.txt中将错误的输出重定向到c.txt</span><br><span class="line">6.请将vsftpd的进程杀掉，他的IPD为11223</span><br><span class="line">7.请描述一下kill与pkill的区别</span><br><span class="line">8.请描述一下什么是nice值</span><br><span class="line">9.如何删除当前目录下以.log结尾的文件？</span><br><span class="line">10.打印当前工作目录的Linux命令是？</span><br><span class="line">11.如何查看在后台运行的程序？</span><br><span class="line">12.如何将后台运行的程序调出之前台运行？</span><br><span class="line">13.2&gt;与&amp;&gt;是什么意思？</span><br><span class="line">14.请用输入重定向将123456写入a.txt文件中。</span><br><span class="line">15.动态查看进程的命令你知道哪几个？</span><br></pre></td></tr></table></figure>
+
+<h6 id="扩展–阅读"><a href="#扩展–阅读" class="headerlink" title="扩展–阅读"></a>扩展–阅读</h6><p><strong>什么是CC攻击？</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">攻击者借助代理服务器生成指向受害主机的合法请求，实现DDOS和伪装就叫：CC(ChallengeCollapsar)。</span><br><span class="line">CC主要是用来攻击页面的。大家都有这样的经历，就是在访问论坛时，如果这个论坛比较大，访问的人比较多，打开页面的速度会比较慢，</span><br><span class="line">访问的人越多，论坛的页面越多，数据库压力就越大，被访问的频率也越高，占用的系统资源也就相当可观。</span><br></pre></td></tr></table></figure>
+
+<p><strong>如何防御CC攻击</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.开启防火墙，过滤掉访问次数多的IP地址</span><br><span class="line">2.拒绝代理服务器访问你服务器</span><br><span class="line">怎么拒绝代理服务器访问呢？</span><br><span class="line">代理服务器有固定的IP地址，将这些IP地址都加到防火墙下，全部drop掉</span><br></pre></td></tr></table></figure>
+
+<p><strong>CC攻击危害是什么？</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">大量的流量不断冲击你的服务器，会让你的服务器负载及压力越来越大，直到服务器崩溃宕机</span><br></pre></td></tr></table></figure>
+
+<p><strong>6.什么是DOS攻击</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DoS是Denial of Service的简称，即拒绝服务，造成DoS的攻击行为被称为DoS攻击，其目的是使计算机或网络无法</span><br><span class="line">提供正常的服务。最常见的DoS攻击有计算机网络带宽攻击和连通性攻击。</span><br></pre></td></tr></table></figure>
+
+<h1 id="千-锋-云-计-算-学-院-1"><a href="#千-锋-云-计-算-学-院-1" class="headerlink" title="千 锋 云 计 算 学 院"></a>千 锋 云 计 算 学 院</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/11/%E7%AE%A1%E9%81%93%E4%B8%8E%E9%87%8D%E5%AE%9A%E5%90%91/" data-id="cm0t98ztl0001w0vy31dj4hiq" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/07/10/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/09/08/%E7%AE%A1%E9%81%93%E4%B8%8E%E9%87%8D%E5%AE%9A%E5%90%91-1/">管道与重定向</a>
+          </li>
+        
+          <li>
+            <a href="/2024/09/07/%E9%9D%A2%E8%AF%95%E9%A2%98%E8%B0%B7/%E9%9D%A2%E8%AF%95%E9%A2%98%E8%B0%B7/">面试题</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/10/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/11/%E7%AE%A1%E9%81%93%E4%B8%8E%E9%87%8D%E5%AE%9A%E5%90%91/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
